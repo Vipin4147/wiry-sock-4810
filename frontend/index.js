@@ -467,6 +467,13 @@ category.onmouseover = () => {
 
   modal.style.display = "flex";
 };
+let bot_left = document.getElementById("bot_left");
+
+bot_left.onmouseover = () => {
+  let modal = document.getElementById("modal");
+
+  modal.style.display = "none";
+};
 
 let modal = document.getElementById("modal");
 modal.onmouseout = () => {
@@ -476,3 +483,50 @@ modal.onmouseout = () => {
 modal.onmouseover = () => {
   modal.style.display = "flex";
 };
+
+let slider_arr = [
+  "https://assets.tatacliq.com/medias/sys_master/images/46111635767326.gif",
+  "https://assets.tatacliq.com/medias/sys_master/images/46111634161694.jpg",
+  "https://assets.tatacliq.com/medias/sys_master/images/46100678574110.jpg",
+  "https://assets.tatacliq.com/medias/sys_master/images/46100678639646.jpg",
+  "https://assets.tatacliq.com/medias/sys_master/images/46100662812702.jpg",
+  "https://assets.tatacliq.com/medias/sys_master/images/46100662681630.jpg",
+];
+
+let i = 1;
+let simg = document.getElementById("slider");
+let img = document.createElement("img");
+img.src = slider_arr[0];
+simg.append(img);
+const slider = () => {
+  setInterval(() => {
+    if (i == 6) {
+      i = 0;
+    }
+    simg.innerHTML = null;
+    let img = document.createElement("img");
+    img.src = slider_arr[i];
+    simg.append(img);
+    i++;
+  }, 2000);
+};
+
+slider();
+
+let free = document.getElementById("free");
+
+const free_time = () => {
+  setInterval(() => {
+    free.style.color = "#b24361";
+  }, 1000);
+};
+
+free_time();
+
+const free_time2 = () => {
+  setInterval(() => {
+    free.style.color = "black";
+  }, 2000);
+};
+
+free_time2();
