@@ -587,18 +587,20 @@ align-items: center;
 #cont_sign_in{
     width: 100%;
     height: 700px;
-    border: 1px solid red;
+    margin-top: -2px;
     background-color: #ffffff;
     display: none;
     position: fixed;
+    background-color: #242222;
 }
 
 #cont_sign_up{
     width: 50%;
     height: 500px;
     margin: auto;
-    border: 1px solid teal;
+    
     margin-top: 0px;
+    background: linear-gradient(135deg, rgb(70, 39, 70) 60%, cyan);
 }
 
 
@@ -617,3 +619,18 @@ align-items: center;
 #cross:hover{
     cursor: pointer;
 }
+
+#login{
+    display: flex;
+    justify-content: space-around;
+}
+
+#login>div{
+    width: 30%;
+}
+
+#login input{
+    width: 100%;
+    margin-top: 30px;
+}
+
