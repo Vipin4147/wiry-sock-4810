@@ -544,3 +544,84 @@ let cross = document.getElementById("cross");
 cross.onclick = () => {
   cont_sign_in.style.display = "none";
 };
+
+const register = async (event) => {
+  event.preventDefault();
+
+  let name = document.getElementById("name");
+  name = name.value;
+  let email = document.getElementById("email");
+  email = email.value;
+  let password = document.getElementById("password");
+  password = password.value;
+
+  let gender = document.getElementById("gender");
+  gender = gender.value;
+
+  let age = document.getElementById("age");
+  age = age.value;
+
+  let city = document.getElementById("city");
+  city = city.value;
+
+  let data = {
+    name,
+    email,
+    password,
+    gender,
+    age,
+    city,
+  };
+  try {
+    let res = await fetch(
+      "https://nervous-bass-overalls.cyclic.app/users/register",
+      {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "content-Type": "application/json",
+        },
+      }
+    );
+
+    let odata = await res.json();
+    console.log(odata);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+register();
+
+const login = async (event) => {
+  event.preventDefault();
+
+  let login_email = document.getElementById("login_email");
+  login_email = login_email.value;
+
+  let login_pass = document.getElementById("login_pass");
+  login_pass - login_pass.value;
+
+  let data = {
+    email: login_email,
+    password: login_pass,
+  };
+  try {
+    let res = await fetch(
+      "https://nervous-bass-overalls.cyclic.app/users/login",
+      {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "content-Type": "application/json",
+        },
+      }
+    );
+    let odata = await res.json();
+    console.log(odata);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+login();

@@ -21,6 +21,28 @@ productrouter.get("/products", async (req, res) => {
   }
 });
 
+productrouter.get("/products/sort_lth", async (req, res) => {
+  try {
+    const data = await ProductModel.find({}).sort({ price: 1 });
+
+    res.send(data);
+  } catch (error) {
+    res.send(error);
+    console.log(error);
+  }
+});
+
+productrouter.get("/products/sort_htl", async (req, res) => {
+  try {
+    const data = await ProductModel.find({}).sort({ price: -1 });
+
+    res.send(data);
+  } catch (error) {
+    res.send(error);
+    console.log(error);
+  }
+});
+
 productrouter.post("/products/add", async (req, res) => {
   try {
     const data = req.body;
