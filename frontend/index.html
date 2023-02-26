@@ -16,7 +16,7 @@
            <div id="login">
             <div>
                 <h3>Register</h3>
-                <form action="" onsubmit="register(event)">
+                <form id="register">
                     <input type="text" id="name" placeholder="Name">
                     <input type="text" id="email" placeholder="email">
                     <input type="text" id="password" placeholder="Password">
@@ -28,7 +28,7 @@
             </div>
             <div>
                 <h3>Login</h3>
-                <form action="" onsubmit="login(event)">
+                <form id="login2">
                     <input type="text" id="login_email" placeholder="E-mail">
                     <input type="text" id="login_pass" placeholder="Password">
                     <input type="submit" placeholder="Login">
@@ -51,7 +51,7 @@
         </div>
     </div>
     <div id="bot">
-        <div id="bot_left"><img src="../logo/Top Cliq.png" alt="">
+        <div id="bot_left"><img src="./logo/Top Cliq.png" alt="">
         </div>
         <div>
             <p id="category">Categories ></p>
@@ -60,6 +60,7 @@
         <input type="search" id="search" placeholder="search for brands">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpHGhKLhiLhKoF2DpM1T3ZhonN3uVsyxkdxg&usqp=CAU" alt="" id="fav">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH0IpUSA4wkbmOR34G4Ly4VlT9_AFPTRleHA&usqp=CAU" alt="" id="cart">
+        <div id="log_name"></div>
     </div>
     </div>
     
@@ -422,7 +423,7 @@
 
 </body>
 </html>
-<script src="./index.js"></script>
+<script type="module" src="./index.js"></script>
 
 
 
