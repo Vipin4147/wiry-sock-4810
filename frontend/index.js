@@ -530,3 +530,17 @@ const free_time2 = () => {
 };
 
 free_time2();
+
+let sign_in = document.getElementById("sign_in");
+
+let cont_sign_in = document.getElementById("cont_sign_in");
+
+sign_in.onclick = () => {
+  cont_sign_in.style.display = "flex";
+};
+
+let cross = document.getElementById("cross");
+
+cross.onclick = () => {
+  cont_sign_in.style.display = "none";
+};
