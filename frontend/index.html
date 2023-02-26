@@ -8,6 +8,36 @@
     <link rel="stylesheet" href="./index.css">
 </head>
 <body>
+    <div id="cont_sign_in">
+        <div id="cont_sign_up">
+        <div id="cross">
+            <img src="https://tse1.mm.bing.net/th?id=OIP.G9clJgbdoOiNTxK9rwrKzgHaHa&pid=Api&P=0" alt="">
+        </div> 
+           <div id="login">
+            <div>
+                <h3>Register</h3>
+                <form id="register">
+                    <input type="text" id="name" placeholder="Name">
+                    <input type="text" id="email" placeholder="email">
+                    <input type="text" id="password" placeholder="Password">
+                    <input type="text" id="gender" placeholder="Gender">
+                    <input type="number" id="age" placeholder="Age">
+                    <input type="text" id="city" placeholder="City">
+                    <input type="submit" placeholder="Register">
+                </form>
+            </div>
+            <div>
+                <h3>Login</h3>
+                <form id="login2">
+                    <input type="text" id="login_email" placeholder="E-mail">
+                    <input type="text" id="login_pass" placeholder="Password">
+                    <input type="submit" placeholder="Login">
+                </form>
+            </div>
+           </div>
+        </div>
+
+ </div>
  <div id="navbar">
     <div id="top">
         <div><p>Top CLIQ Luxury</p>
@@ -17,11 +47,11 @@
             <p>Gift Card</p>
             <p>CLiQ Care</p>
             <p>Track Orders</p>
-            <p>Sign in/Sign Up</p>
+            <p id="sign_in">Sign in/Sign Up</p>
         </div>
     </div>
     <div id="bot">
-        <div id="bot_left"><img src="../logo/Top Cliq.png" alt="">
+        <div id="bot_left"><img src="./logo/Top Cliq.png" alt="">
         </div>
         <div>
             <p id="category">Categories ></p>
@@ -30,8 +60,10 @@
         <input type="search" id="search" placeholder="search for brands">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpHGhKLhiLhKoF2DpM1T3ZhonN3uVsyxkdxg&usqp=CAU" alt="" id="fav">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH0IpUSA4wkbmOR34G4Ly4VlT9_AFPTRleHA&usqp=CAU" alt="" id="cart">
+        <div id="log_name"></div>
     </div>
     </div>
+    
  </div>
 
  <div id="modal">
@@ -391,7 +423,7 @@
 
 </body>
 </html>
-<script src="./index.js"></script>
+<script type="module" src="./index.js"></script>
 
 
 
