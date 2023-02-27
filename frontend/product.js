@@ -484,5 +484,102 @@ modal.onmouseover = () => {
   modal.style.display = "flex";
 };
 
-let sort =document.getElementById("sort");
+let get_data = async () => {
+  try {
+    let token = localStorage.getItem("token");
+    let res = await fetch("https://blue-blushing-deer.cyclic.app/products", {
+      method: "GET",
+      headers: {
+        authorization: token,
+      },
+    });
+    let data = await res.json();
+    console.log(data);
+    append_data(data);
+  } catch (error) {
+    console.log(error);
+  }
+};
 
+get_data();
+
+const append_data = (data) => {
+  let container = document.getElementById("container");
+  container.innerHTML = null;
+  data.forEach((el) => {
+    let div = document.createElement("div");
+    let img = document.createElement("img");
+    img.src = el.image;
+    let title = document.createElement("p");
+    title.innerText = el.title;
+    let des = document.createElement("p");
+    des.innerText = el.description;
+    des.setAttribute("class", "desc");
+    let price = document.createElement("h2");
+    price.innerText = "Price" + ":" + el.price;
+    let rating = document.createElement("h3");
+    rating.innerText = "Rating" + ":" + el.rating.rate;
+
+    let add_to_cart = document.createElement("button");
+    add_to_cart.innerText = "ADD TO CART";
+    add_to_cart.setAttribute("class", "add_cart");
+    div.append(img, title, des, price, rating, add_to_cart);
+    container.append(div);
+  });
+};
+
+let sort = document.getElementById("popularity");
+sort.onchange = async () => {
+  if (sort.value == "Sort_lth") {
+    try {
+      let token = localStorage.getItem("token");
+      let res = await fetch(
+        "https://blue-blushing-deer.cyclic.app/products/sort_lth",
+        {
+          method: "GET",
+          headers: {
+            authorization: token,
+          },
+        }
+      );
+      let data = await res.json();
+      console.log(data);
+      append_data(data);
+    } catch (error) {
+      console.log(error);
+    }
+  } else if (sort.value == "Sort_htl") {
+    try {
+      let token = localStorage.getItem("token");
+      let res = await fetch(
+        "https://blue-blushing-deer.cyclic.app/products/sort_htl",
+        {
+          method: "GET",
+          headers: {
+            authorization: token,
+          },
+        }
+      );
+      let data = await res.json();
+      console.log(data);
+      append_data(data);
+    } catch (error) {
+      console.log(error);
+    }
+  } else {
+    get_data();
+  }
+};
+
+let bot_lef = document.getElementById("bot_left");
+
+bot_lef.onclick = () => {
+  window.location.href = "./index.html";
+};
+
+let log_name = document.getElementById("log_name");
+let hello = localStorage.getItem("hello");
+
+if (hello != null) {
+  log_name.innerText = "Hello" + " " + hello;
+}
