@@ -34,7 +34,7 @@
     justify-content: space-between;
     margin-right: 250px;
     align-items: center;
-    margin-left: -200px;
+    margin-left: -150px;
     
 }
 
@@ -132,6 +132,8 @@
     margin-bottom: 0px;
     height: 40px;
     margin-top: 20px;
+    text-align: center;
+   
 }
 
 #modal_left>div:hover{
@@ -157,6 +159,7 @@ body{
 #modal{
     position: fixed;
     background-color: #ffffff;
+    margin-top: -11.5px;
 }
 
 #first_div{
