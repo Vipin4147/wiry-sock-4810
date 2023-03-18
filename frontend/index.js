@@ -601,6 +601,7 @@ let register = async (event) => {
     console.log(odata);
   } catch (error) {
     console.log(error);
+    alert(error);
   }
 };
 
@@ -630,8 +631,17 @@ let login = async (event) => {
     console.log(odata);
     let log_name = document.getElementById("log_name");
     log_name.innerText = "Hello " + login_email;
+    localStorage.setItem("hello", login_email);
     localStorage.setItem("token", odata.token);
   } catch (error) {
     console.log(error);
+    alert(error);
   }
 };
+
+let log_name = document.getElementById("log_name");
+let hello = localStorage.getItem("hello");
+
+if (hello != null) {
+  log_name.innerText = "Hello" + " " + hello;
+}
